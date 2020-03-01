@@ -1,0 +1,5 @@
+PL;Polska;38000000
+DL;Niemcy;24000000
+JP;Japonia;15000000
+CHN;Chiny;100000000
+NBL;Nibylandia;90
