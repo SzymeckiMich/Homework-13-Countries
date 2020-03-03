@@ -4,8 +4,8 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
-        Map<String, Country> countries = Utils.mapCreator("Countries.txt");
+        Map<String, Country> countries = CountryUtils.createCountryCodes("Countries.txt");
 
-        Utils.showInfo(countries);
+        CountryUtils.showInfo(countries);
     }
 }

@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Utils {
-    public static Map mapCreator(String filename) throws FileNotFoundException {
+public class CountryUtils {
+    public static Map createCountryCodes(String filename) throws FileNotFoundException {
         File file = new File(filename);
         Scanner scanner = new Scanner(file);
         Map<String, Country> countries = new HashMap<>();
@@ -24,13 +24,12 @@ public class Utils {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Podaj kod kraju do wyświetlenia: ");
             String code = scanner.nextLine();
-
-            System.out.println("Kod kraju: " + countries.get(code).getCode() + "\nNazwa kraju: " +
-                    countries.get(code).getName() + "\nPopulacja: " + countries.get(code).getPopulation());
-            scanner.close();
-        }
-        catch (NullPointerException ex){
-            System.err.println("Zły kod kraju");
+            if (countries.get(code) != null) {
+                System.out.println("Kod kraju: " + countries.get(code).getCode() + "\nNazwa kraju: " +
+                        countries.get(code).getName() + "\nPopulacja: " + countries.get(code).getPopulation());
+            } else {
+                System.err.println("Zły kod kraju");
+            }
         }
     }
 }
